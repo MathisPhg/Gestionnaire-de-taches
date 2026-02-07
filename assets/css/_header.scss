@@ -13,12 +13,15 @@ header {
      
      a {
           
-          &:hover
+          &:hover {
+               color: #5D80FF;
+               font-size: 1.8em;
+          }
           
           text-decoration: none;
           font-weight: bold;
           font-size: 1.5em;
-          color: #6183FF;
+          color: #8DA7FE;
           
      }
      

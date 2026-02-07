@@ -1,0 +1,139 @@
+.register {
+     
+     margin: auto;
+     width: 90%;
+     
+     display: flex;
+     gap: 3.5em;
+     flex-direction: column;
+     align-items: center;
+     
+     .registerText {
+          
+          text-align: center;
+          
+     }
+     
+     .registerForm {
+          
+          width: 100%;
+          
+          
+     }
+     
+     
+     form {
+          
+          display: flex;
+          flex-direction: column;
+          
+          
+          input {
+               
+               margin-top: 1em;
+               width: 100%;
+               border-radius: 0.5em;
+               height: 3em;
+               
+          }
+          
+          label {
+               
+               margin-bottom: 1.5em;
+               
+          }
+          
+          .submit {
+               
+               font-size: 1em;
+               padding: 1em;
+               color: white;
+               border: none;
+               border-radius: 1em;
+               background-color: #8DA7FE;
+               
+               &:hover {
+                    
+                    background-color: #5D80FF;
+                    
+               }
+               
+          }
+          
+     }
+     
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+     
+     
+.register {
+     
+     width: 80%;
+
+
+     .registerForm {
+          
+          width: 100%;
+          
+          
+     }
+     
+     
+     form {
+          
+          
+          input {
+               
+               width: 100%;
+               
+          }
+          
+          .submit {
+               
+               
+               
+          }
+          
+     }
+     
+}     
+     
+     
+}
+
+
+@media screen and (min-width: 1023px)  {
+     
+     
+.register {
+     
+     width: 65%;
+     
+     .registerForm {
+          
+          width: 70%;
+          
+     }
+     
+     
+     form {
+          
+          .submit {
+               
+               width: 10em;
+               padding: 0.5em;
+               
+               
+          }
+          
+     }
+     
+}     
+     
+     
+     
+     
+     
+     
+}

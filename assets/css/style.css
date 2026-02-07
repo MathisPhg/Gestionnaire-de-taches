@@ -1,18 +1,195 @@
-/* Error: expected "{".
- *    ,
- * 18 |           text-decoration: none;
- *    |                                ^
- *    '
- *   _header.scss 18:32  @import
- *   style.scss 20:9     root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a    \2577 \a 18 \2502            text-decoration: none;\a    \2502                                 ^\a    \2575 \a   _header.scss 18:32  @import\a   style.scss 20:9     root stylesheet';
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #F8FAF9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+body {
+  background-color: #F8FAF9;
+}
+
+a,
+h1,
+h2,
+h3,
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+.home {
+  width: 80%;
+  margin: auto;
+}
+.home .introduction {
+  margin-bottom: 5em;
+  text-align: center;
+}
+.home .introduction .introText {
+  margin-bottom: 0.25em;
+}
+.home .introduction .introText h1 {
+  font-size: 5em;
+  margin-bottom: 0.5em;
+}
+.home .introduction .introText h2 {
+  font-size: 3.5em;
+  margin-bottom: 0.5em;
+}
+.home .introduction .introText p {
+  margin-bottom: 1.5em;
+  font-size: 2em;
+}
+.home .introduction .connextionPages a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: white;
+  padding: 0.8em;
+  border-radius: 1em;
+  background-color: #8DA7FE;
+}
+.home .introduction .connextionPages a:hover {
+  padding: 1em;
+  border-radius: 1em;
+  background-color: #5D80FF;
+}
+.home .introImage {
+  text-align: center;
+  margin-bottom: 10em;
+}
+.home .introImage img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .home .introduction {
+    width: calc(50% - 1.5em);
+  }
+  .home .introduction .introText h1 {
+    font-size: 4em;
+  }
+  .home .introduction .introText h2 {
+    font-size: 2.5em;
+  }
+  .home .introduction .introText p {
+    font-size: 1.5em;
+  }
+  .home .introduction .connextionPages a {
+    font-size: 1.5em;
+  }
+  .home .introImage {
+    width: calc(50% - 1.5em);
+  }
+}
+header {
+  width: 90%;
+  margin: 1em auto 15vh auto;
+  box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.3);
+  padding: 1em;
+  border-radius: 1em;
+  text-align: center;
+}
+header a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #8DA7FE;
+}
+header a:hover {
+  color: #5D80FF;
+  font-size: 1.8em;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 1em;
+  font-size: 1.5em;
+  margin-top: 5em;
+  width: 100%;
+}
+
+.register {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  gap: 3.5em;
+  flex-direction: column;
+  align-items: center;
+}
+.register .registerText {
+  text-align: center;
+}
+.register .registerForm {
+  width: 100%;
+}
+.register form {
+  display: flex;
+  flex-direction: column;
+}
+.register form input {
+  margin-top: 1em;
+  width: 100%;
+  border-radius: 0.5em;
+  height: 3em;
+}
+.register form label {
+  margin-bottom: 1.5em;
+}
+.register form .submit {
+  font-size: 1em;
+  padding: 1em;
+  color: white;
+  border: none;
+  border-radius: 1em;
+  background-color: #8DA7FE;
+}
+.register form .submit:hover {
+  background-color: #5D80FF;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .register {
+    width: 80%;
+  }
+  .register .registerForm {
+    width: 100%;
+  }
+  .register form input {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1023px) {
+  .register {
+    width: 65%;
+  }
+  .register .registerForm {
+    width: 70%;
+  }
+  .register form .submit {
+    width: 10em;
+    padding: 0.5em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
