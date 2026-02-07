@@ -46,7 +46,13 @@
                
                a {
                     
-                    
+                    &:hover {
+                         
+                         padding: 1em;
+                         border-radius: 1em;
+                         background-color:#5D80FF;
+                         
+                    }
                     
                     text-decoration: none;
                     font-weight: bold;

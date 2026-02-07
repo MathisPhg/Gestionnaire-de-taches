@@ -1,105 +1,18 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
+/* Error: expected "{".
+ *    ,
+ * 18 |           text-decoration: none;
+ *    |                                ^
+ *    '
+ *   _header.scss 18:32  @import
+ *   style.scss 20:9     root stylesheet */
 
-body {
-  background-color: #F8FAF9;
-}
-
-a,
-h1,
-h2,
-p {
-  font-family: "Roboto", sans-serif;
-}
-
-.home {
-  width: 80%;
-  margin: auto;
-}
-.home .introduction {
-  margin-bottom: 5em;
-  text-align: center;
-}
-.home .introduction .introText {
-  margin-bottom: 0.25em;
-}
-.home .introduction .introText h1 {
-  font-size: 5em;
-  margin-bottom: 0.5em;
-}
-.home .introduction .introText h2 {
-  font-size: 3.5em;
-  margin-bottom: 0.5em;
-}
-.home .introduction .introText p {
-  margin-bottom: 1.5em;
-  font-size: 2em;
-}
-.home .introduction .connextionPages a {
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.5em;
-  color: white;
-  padding: 0.8em;
-  border-radius: 1em;
-  background-color: #8DA7FE;
-}
-.home .introImage {
-  text-align: center;
-  margin-bottom: 10em;
-}
-.home .introImage img {
-  width: 100%;
-}
-
-@media screen and (min-width: 768px) {
-  .home {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .home .introduction {
-    width: calc(50% - 1.5em);
-  }
-  .home .introduction .introText h1 {
-    font-size: 4em;
-  }
-  .home .introduction .introText h2 {
-    font-size: 2.5em;
-  }
-  .home .introduction .introText p {
-    font-size: 1.5em;
-  }
-  .home .introduction .connextionPages a {
-    font-size: 1.5em;
-  }
-  .home .introImage {
-    width: calc(50% - 1.5em);
-  }
-}
-header {
-  width: 90%;
-  margin: 1em auto 15vh auto;
-  box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.3);
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
   padding: 1em;
-  border-radius: 1em;
-  text-align: center;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: expected "{".\a    \2577 \a 18 \2502            text-decoration: none;\a    \2502                                 ^\a    \2575 \a   _header.scss 18:32  @import\a   style.scss 20:9     root stylesheet';
 }
-header a {
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.5em;
-  color: #6183FF;
-}
-
-footer {
-  background-color: black;
-  color: white;
-  padding: 1em;
-  font-size: 1.5em;
-  margin-top: 5em;
-}
-
-/*# sourceMappingURL=style.css.map */
