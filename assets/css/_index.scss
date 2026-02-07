@@ -1,0 +1,83 @@
+.home {
+     
+     width: 80%;
+     margin: auto;
+     
+     
+     .introduction {
+          
+          padding-bottom: 5em;
+          
+          text-align: center;
+          
+          .introText {
+               
+               margin-bottom: 0.25em;
+               
+               
+               h1 {
+                    
+                    font-size: 5em;
+                    margin-bottom: 0.5em;
+                    
+               }
+               
+               h2 {
+                    
+                    font-size: 3.5em;
+                    margin-bottom: 0.5em;
+                    
+               }
+               
+               p {
+                    
+                    margin-bottom: 1.5em;
+                    font-size: 2em;
+                    
+                    
+                    
+               }
+               
+          }
+          
+          
+          .connextionPages {
+               
+               
+               a {
+                    
+                    
+                    
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-size: 1.5em;
+                    color: white;
+                    
+                    padding: 0.8em;
+                    border-radius: 1em;
+                    background-color:#8DA7FE;
+                    
+               }
+               
+          }
+          
+          
+     }
+     
+     
+     
+     
+     .introImage {
+          
+          text-align: center;
+          margin-bottom: 10em;
+          
+          img {
+               
+               width: 100%;
+               
+          }
+     }
+     
+}
+
