@@ -19,7 +19,7 @@ p {
   margin: auto;
 }
 .home .introduction {
-  padding-bottom: 5em;
+  margin-bottom: 5em;
   text-align: center;
 }
 .home .introduction .introText {
@@ -54,6 +54,31 @@ p {
   width: 100%;
 }
 
+@media screen and (min-width: 768px) {
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .home .introduction {
+    width: calc(50% - 1.5em);
+  }
+  .home .introduction .introText h1 {
+    font-size: 4em;
+  }
+  .home .introduction .introText h2 {
+    font-size: 2.5em;
+  }
+  .home .introduction .introText p {
+    font-size: 1.5em;
+  }
+  .home .introduction .connextionPages a {
+    font-size: 1.5em;
+  }
+  .home .introImage {
+    width: calc(50% - 1.5em);
+  }
+}
 header {
   width: 90%;
   margin: 1em auto 15vh auto;
@@ -74,6 +99,7 @@ footer {
   color: white;
   padding: 1em;
   font-size: 1.5em;
+  margin-top: 5em;
 }
 
 /*# sourceMappingURL=style.css.map */

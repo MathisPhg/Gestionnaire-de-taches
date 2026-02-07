@@ -6,7 +6,7 @@
      
      .introduction {
           
-          padding-bottom: 5em;
+          margin-bottom: 5em;
           
           text-align: center;
           
@@ -81,3 +81,63 @@
      
 }
 
+
+@media screen and (min-width: 768px) {
+     
+     
+     .home {
+          
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          
+          .introduction {
+               
+               width: calc(50% - 1.5em) ;
+
+
+               .introText {
+                    
+                    
+                    h1 {
+                         
+                         font-size: 4em;
+                    }
+                    
+                    h2 {
+                         
+                         font-size: 2.5em;
+                    }
+                    
+                    p {
+                         
+                         font-size: 1.5em;
+                         
+                         
+                         
+                    }
+                    
+               }
+               
+               
+               .connextionPages {
+                    
+                    
+                    a {
+                         font-size: 1.5em;
+                    }
+                    
+               }
+               
+               
+          }
+          
+          
+          
+          
+          .introImage {
+               width: calc(50% - 1.5em) ;
+          }
+          
+     }     
+}
