@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = 'Register';
 
 require_once 'connectToDB.php';
@@ -79,16 +80,28 @@ if(!empty($_POST)){
                $requete->bindParam(':password', $mot_de_passe_hache, PDO::PARAM_STR);
                
                $requete->execute();
-              
-              
-              
+               
+               $userId = $db->lastInsertId();
+               
+               
+               $_SESSION['user'] = [
+                    'id' => $userId,
+                    'username' => $username,
+                    'email' => $email,
+                    'created_at' => date("d-m-Y")
+               ];
+               
+               
+               
+               header('Location: account.php');
+               exit;
               
               
             } catch (Exception $e) {
               
               $errors["database"] = "Please try another username or email";
               
-        }
+          }
      
      
      

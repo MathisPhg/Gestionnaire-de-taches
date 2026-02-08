@@ -4,7 +4,7 @@ require 'connectToDB.php';
 
 
 //verif si l'user s'est connecté 
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['user'])) {
     header('Location: login.php');
     exit;
 }
@@ -19,7 +19,7 @@ if (!isset($_GET['id'])) {
 }
 
 $taskId = (int)$_GET['id'];
-$userId = $_SESSION['user_id'];
+$userId = $_SESSION['user']["id"];
 
 
 
@@ -73,6 +73,6 @@ if (!empty($_POST)) {
     exit;
 }
 
-
+$title = 'Edit task';
 $template = './template/editTask.phtml';
 include 'template/layout.phtml';

@@ -2,6 +2,7 @@
 session_start();
 require_once 'connectToDB.php';
 
+$db = connectToDB();
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -23,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // Recherche de l'utilisateur
-        $stmt = $pdo->prepare(
+        $stmt = $db->prepare(
             "SELECT * FROM users WHERE username = ? AND email = ?"
         );
         $stmt->execute([
@@ -34,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // Vérification mot de passe
-        if (!$user || $_POST['password'] !== $user['password']) {
+        if (!$user || !password_verify($_POST['password'], $user['password'])) {
     throw new Exception("Identifiants incorrects");
 }
 

@@ -66,7 +66,7 @@
                               
                               <article class="first">
                               <img src="./assets/images/first.png" alt="gold medale">
-                              <h2><?= $rankedUsers[$i]["username"]?></h2>
+                              <h2><?= htmlspecialchars($rankedUsers[$i]["username"])?></h2>
                               </article>
                          <?php break;?>
                          
@@ -74,7 +74,7 @@
                               
                               <article class="second">
                               <img src="./assets/images/second.png" alt="silver medale">
-                              <h2><?= $rankedUsers[$i]["username"]?></h2>
+                              <h2><?= htmlspecialchars($rankedUsers[$i]["username"])?></h2>
                               </article>
                          <?php break;?>
                          
@@ -82,7 +82,7 @@
                               
                               <article class="third">
                               <img src="./assets/images/third.png" alt="bronze medale">
-                              <h2><?= $rankedUsers[$i]["username"]?></h2>
+                              <h2><?= htmlspecialchars($rankedUsers[$i]["username"])?></h2>
                               </article>
                          <?php break;?>
                          
@@ -90,12 +90,14 @@
                               
                               <article class="outPodium">
                               <h1>#<?= $i + 1?></h1>
-                              <h2><?= $rankedUsers[$i]["username"]?></h2>
+                              <h2><?= htmlspecialchars($rankedUsers[$i]["username"])?></h2>
                               </article>
                               
                     <?php endswitch;?>
                     
                <?php endfor;?>
+               
+               
                
           <?php endif; ?>
      </section>
