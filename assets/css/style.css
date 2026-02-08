@@ -117,7 +117,7 @@ header a {
 }
 header a:hover {
   color: #5D80FF;
-  font-size: 1.8em;
+  font-size: 1.7em;
 }
 
 footer {
@@ -160,18 +160,34 @@ footer {
   font-size: 1em;
   padding: 1em;
   color: white;
+  font-weight: bold;
   border: none;
   border-radius: 1em;
   background-color: #8DA7FE;
 }
 .register form .submit:hover {
   background-color: #5D80FF;
+  transform: scale(1.1);
 }
-.register .displayError {
+.register .onceSubmit .displayError {
   color: red;
 }
-.register .noError {
+.register .onceSubmit .noError {
   color: darkgreen;
+  margin-bottom: 3em;
+}
+.register .onceSubmit a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  color: white;
+  padding: 1em;
+  border-radius: 1em;
+  background-color: #8DA7FE;
+}
+.register .onceSubmit a:hover {
+  padding: 1.2em;
+  background-color: #5D80FF;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -183,6 +199,15 @@ footer {
   }
   .register form input {
     width: 100%;
+  }
+  .register .onceSubmit a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+    padding: 0.8em;
+    border-radius: 1em;
+    background-color: #8DA7FE;
   }
 }
 @media screen and (min-width: 1023px) {

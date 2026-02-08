@@ -11,6 +11,7 @@ if(!empty($_POST)){
     $email = $_POST['email'];
     $password = $_POST['password'];
     $errors = array();
+    $didExist = array();
     
     $uppercase = preg_match("/[A-Z]/", $password);
     
@@ -31,19 +32,74 @@ if(!empty($_POST)){
     if (!$uppercase || !$lowercase || !$number || strlen($password) < 8) {
         $errors["password"] = "The password must contain a least 8 character, one lower case, one upper case and one number.";
     } else if (empty($errors)) {
+         
+         
+         try {
+              
+              $checkExist = $db->prepare("SELECT COUNT(*) FROM users WHERE username = :username");
+              
+              $checkExist->bindParam(":username", $username, PDO::PARAM_STR);
+              
+              $checkExist->execute();
+              
+              $doExist["user"] =  $checkExist->fetchColumn();
+              
+              
+              if($doExist["user"] > 0) {
+                   
+                   $errors["name"] = "Username already existe";
+                   
+              }
+              
+              
+              
+              
+              $checkExist = $db->prepare("SELECT COUNT(*) FROM users WHERE email = :email");
+              
+              $checkExist->bindParam(":email", $email, PDO::PARAM_STR);
+              
+              $checkExist->execute();
+              
+              $doExist["email"] =  $checkExist->fetchColumn();
+              
+              
+              if($doExist["email"] > 0) {
+                   
+                   $errors["email"] = "Email already use";
+                   
+              }
+              
+              
+               $mot_de_passe_hache = password_hash($password, PASSWORD_DEFAULT);
+               
+               $requete = $db->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password )");
+               
+               $requete->bindParam(':username', $username, PDO::PARAM_STR);
+               $requete->bindParam(':email', $email, PDO::PARAM_STR);
+               $requete->bindParam(':password', $mot_de_passe_hache, PDO::PARAM_STR);
+               
+               $requete->execute();
+              
+              
+              
+              
+              
+         } catch (Exception $e) {
+              
+              $errors["database"] = "Please try another username or email";
+              
+         }
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
         
-        $mot_de_passe_hache = password_hash($password, PASSWORD_DEFAULT);
-        
-        
-        
-        $requete = $db->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password )");
-        
-        $requete->bindParam(':username', $username, PDO::PARAM_STR);
-        $requete->bindParam(':email', $email, PDO::PARAM_STR);
-        $requete->bindParam(':password', $mot_de_passe_hache, PDO::PARAM_STR);
-        
-        
-       $requete->execute();
     }
     
 }

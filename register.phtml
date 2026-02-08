@@ -24,13 +24,13 @@
             <input type="text" name="password" />
             </label>
             
-            <input type="submit" value="register" class="submit"/>
+            <input type="submit" value="Register" class="submit"/>
         </form>
         
     </section>
     
     
-    <section>
+    <section class="onceSubmit">
         
         <?php if(isset($errors) && !empty($errors)) : ?>
             <?php foreach ($errors as $error) : ?>
@@ -38,6 +38,7 @@
             <?php endforeach; ?>
         <?php elseif(isset($errors)) : ?>
             <p class="noError">You register</p>
+            <a href="login.php">Login</a>
         <?php endif; ?>
         
         
