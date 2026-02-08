@@ -1,7 +1,7 @@
 <?php
+$title = 'Register';
 
-
-require('connectToDB.php');
+require_once 'connectToDB.php';
 
 if(!empty($_POST)){
 
@@ -49,7 +49,7 @@ if(!empty($_POST)){
                    
                    $errors["name"] = "Username already existe";
                    
-              }
+                }
               
               
               
@@ -67,7 +67,7 @@ if(!empty($_POST)){
                    
                    $errors["email"] = "Email already use";
                    
-              }
+                }
               
               
                $mot_de_passe_hache = password_hash($password, PASSWORD_DEFAULT);
@@ -84,21 +84,21 @@ if(!empty($_POST)){
               
               
               
-         } catch (Exception $e) {
+            } catch (Exception $e) {
               
               $errors["database"] = "Please try another username or email";
               
-         }
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
+        }
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
         
     }
     
@@ -106,8 +106,8 @@ if(!empty($_POST)){
 
 
 //on définit le template associé à la page
-$template = "register.phtml";
+$template = "./template/register.phtml";
 
 
 //on inclut le layout
-include "layout.phtml";
+include "./template/layout.phtml";

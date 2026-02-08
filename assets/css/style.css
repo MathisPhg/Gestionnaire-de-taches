@@ -222,5 +222,106 @@ footer {
     padding: 0.5em;
   }
 }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+}
+
+.main {
+  padding: 2rem;
+}
+
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+.auth-card {
+  background: white;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.auth-card input, .auth-card button {
+  padding: 0.7rem;
+  font-size: 1rem;
+}
+.auth-card button {
+  background: #4c6ef5;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}
+
+.matrix {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.quadrant {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.task {
+  border-top: 1px solid #ddd;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.ranking {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  gap: 3em;
+  flex-direction: column;
+  align-items: center;
+}
+.ranking section {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.ranking section article {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  border: 2px solid black;
+  border-radius: 2em;
+  border-color: black;
+  padding: 2em;
+}
+.ranking section article img {
+  width: 5%;
+}
+.ranking section .first {
+  border: 2px solid gold;
+}
+.ranking section .second {
+  border: 2px solid silver;
+}
+.ranking section .third {
+  border: 2px solid brown;
+}
 
 /*# sourceMappingURL=style.css.map */

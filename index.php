@@ -1,8 +1,10 @@
 <?php
 
+$title = 'Home';
+
 //on définit le template associé à la page
-$template = "home.phtml";
+$template = "./template/home.phtml";
 
 
 //on inclut le layout
-include "layout.phtml";
+include "./template/layout.phtml";

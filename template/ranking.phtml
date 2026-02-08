@@ -1,0 +1,105 @@
+
+<main class="ranking">
+     
+     <h1>Ranking</h1>
+     
+     
+     
+     
+     
+     <section>
+          
+          
+          <!---
+          
+          
+          
+          article de test :
+          
+          
+          
+          
+          <article class="first">
+               
+               <img src="./assets/images/first.png" alt="gold medale">
+               
+               <h2>Alice</h2>
+               
+          </article>
+          
+          <article class="second">
+               
+               <img src="./assets/images/second.png" alt="silver medale">
+               
+               <h2>bob</h2>
+               
+          </article>
+          
+          <article class="third">
+               
+               <img src="./assets/images/third.png" alt="bronze medale">
+               
+               <h2>charle</h2>
+               
+          </article>
+          
+          
+          <article class="outPodium">
+               
+               <h1>#4</h1>
+               
+               <h2>Daniel</h2>
+               
+          </article>
+          
+          -->
+          
+          
+          
+          <?php if($rankedUsers !== null):?>
+               
+               <?php for ($i = 0; $i < count($rankedUsers); $i++): ?>
+               
+                    <?php switch ($i):
+                    
+                          case 0:?>
+                              
+                              <article class="first">
+                              <img src="./assets/images/first.png" alt="gold medale">
+                              <h2><?= $rankedUsers[$i]["username"]?></h2>
+                              </article>
+                         <?php break;?>
+                         
+                         <?php case 1:?>
+                              
+                              <article class="second">
+                              <img src="./assets/images/second.png" alt="silver medale">
+                              <h2><?= $rankedUsers[$i]["username"]?></h2>
+                              </article>
+                         <?php break;?>
+                         
+                         <?php case 2:?>
+                              
+                              <article class="third">
+                              <img src="./assets/images/third.png" alt="bronze medale">
+                              <h2><?= $rankedUsers[$i]["username"]?></h2>
+                              </article>
+                         <?php break;?>
+                         
+                         <?php default:?>
+                              
+                              <article class="outPodium">
+                              <h1>#<?= $i + 1?></h1>
+                              <h2><?= $rankedUsers[$i]["username"]?></h2>
+                              </article>
+                              
+                    <?php endswitch;?>
+                    
+               <?php endfor;?>
+               
+          <?php endif; ?>
+     </section>
+     
+     
+     
+</main>

@@ -1,0 +1,82 @@
+.ranking {
+     
+     width: 80%;
+     margin: auto;
+     
+     
+     display: flex;
+     gap: 3em;
+     flex-direction: column;
+     align-items: center;
+     
+     section {
+          
+          display: flex;
+          flex-direction: column;
+          gap: 2em;
+          
+          article {
+               
+               display: flex;
+               align-items: center;
+               gap: 2em;
+               
+               border: 2px solid black;
+               border-radius: 2em;
+               border-color: black;
+               
+               padding: 2em;
+               
+               
+               img {
+                    
+                    width: 5%;
+                    
+               }
+               
+               
+          }
+          
+          
+          .first {
+               
+               border: 2px solid gold;
+               
+          }
+          
+          .second {
+               
+               border: 2px solid silver;
+               
+          }
+          
+          
+          .third {
+               
+               border: 2px solid brown;
+               
+               
+          }
+          
+          
+          .outPodium {
+               
+               
+               h1 {
+                    
+                    
+                    
+               }
+               
+               
+          }
+          
+          
+          
+          
+     }
+     
+     
+     
+     
+}

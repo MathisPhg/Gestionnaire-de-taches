@@ -1,0 +1,73 @@
+
+
+     
+     body {
+       margin: 0;
+       font-family: Arial, sans-serif;
+       background: #f5f6fa;
+     }
+     
+     .main {
+       padding: 2rem;
+     }
+     
+     .auth {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       min-height: 70vh;
+     
+       &-card {
+         background: white;
+         padding: 2rem;
+         width: 100%;
+         max-width: 400px;
+         border-radius: 8px;
+         box-shadow: 0 10px 20px rgba(0,0,0,.1);
+     
+         h2 {
+           text-align: center;
+           margin-bottom: 1.5rem;
+         }
+     
+         form {
+           display: flex;
+           flex-direction: column;
+           gap: 1rem;
+         }
+     
+         input, button {
+           padding: .7rem;
+           font-size: 1rem;
+         }
+     
+         button {
+           background: #4c6ef5;
+           color: white;
+           border: none;
+           cursor: pointer;
+         }
+       }
+     }
+     
+     .error {
+       color: red;
+       text-align: center;
+     }
+     .matrix {
+       display: grid;
+       grid-template-columns: 1fr;
+       gap: 1rem;
+     }
+     
+     .quadrant {
+       background: #fff;
+       padding: 1rem;
+       border-radius: 6px;
+     }
+     
+     .task {
+       border-top: 1px solid #ddd;
+       padding-top: .5rem;
+       margin-top: .5rem;
+     }
