@@ -167,6 +167,12 @@ footer {
 .register form .submit:hover {
   background-color: #5D80FF;
 }
+.register .displayError {
+  color: red;
+}
+.register .noError {
+  color: darkgreen;
+}
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .register {

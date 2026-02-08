@@ -10,22 +10,36 @@
     
     <section class="registerForm">
         
-        <form method="post" action="signup.php">
+        <form method="POST" action="register.php">
             
             <label for="name">Username
-            <input type="text" name="name" required/>
+            <input type="text" name="username" />
             </label>
             
             <label for="email">Email
-            <input type="text" name="email" required/>
+            <input type="email" name="email" />
             </label>
             
             <label for="password">Password
-            <input type="text" name="password" required/>
+            <input type="text" name="password" />
             </label>
             
             <input type="submit" value="register" class="submit"/>
         </form>
+        
+    </section>
+    
+    
+    <section>
+        
+        <?php if(isset($errors) && !empty($errors)) : ?>
+            <?php foreach ($errors as $error) : ?>
+                <p class="displayError"><?= $error ?></p>
+            <?php endforeach; ?>
+        <?php elseif(isset($errors)) : ?>
+            <p class="noError">You register</p>
+        <?php endif; ?>
+        
         
     </section>
     
