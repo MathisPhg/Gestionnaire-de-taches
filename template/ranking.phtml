@@ -1,7 +1,7 @@
 
 <main class="ranking">
      
-     <h1>Ranking</h1>
+     <h1>Ranking top 5</h1>
      
      
      
@@ -56,7 +56,7 @@
           
           
           
-          <?php if($rankedUsers !== null):?>
+          <?php if($rankedUsers !== []):?>
                
                <?php for ($i = 0; $i < count($rankedUsers); $i++): ?>
                
@@ -97,8 +97,10 @@
                     
                <?php endfor;?>
                
-               
-               
+               <?php elseif($rankedUsers == []) : ?>
+                    
+                    <h1>No one have finish a task</h1>
+                    
           <?php endif; ?>
      </section>
      
