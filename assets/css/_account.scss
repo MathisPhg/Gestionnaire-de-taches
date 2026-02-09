@@ -1,0 +1,180 @@
+/* ===== CONTENEUR PRINCIPAL ===== */
+.account {
+  
+  
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    align-items: flex-start;
+  
+  
+  /* ===== COLONNE GAUCHE ===== */
+  .user-info,
+  .add-task,
+  .delete-account {
+    width: 280px;
+  }
+  
+  /* Infos utilisateur */
+  .user-info {
+    margin-bottom: 30px;
+  
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      font-size: 0.9rem;
+      margin: 4px 0;
+      color: #333;
+    }
+  }
+  
+  /* ===== FORMULAIRE AJOUT TÂCHE ===== */
+  .add-task {
+    margin-bottom: 30px;
+  
+    h2 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      label {
+        font-size: 0.9rem;
+      }
+    }
+  
+    input[type="text"] {
+      width: 160px;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  
+    input[type="checkbox"] {
+      transform: scale(1.1);
+    }
+  
+    button {
+      margin-top: 10px;
+      padding: 8px;
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #0b5ed7;
+      }
+    }
+  }
+  
+  /* ===== MATRICE DE TÂCHES (COLONNE DROITE) ===== */
+  .eisenhower {
+    flex: 1;
+  
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .matrix-cell {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+  
+    h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+  }
+  
+  /* Tâche */
+  .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+  
+    &:last-child {
+      border-bottom: none;
+    }
+  
+    span {
+      font-size: 0.9rem;
+    }
+  
+    a {
+      margin-left: 8px;
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: #0d6efd;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  /* Texte vide */
+  .matrix-cell p {
+    font-size: 0.85rem;
+    color: #777;
+  }
+  
+  /* ===== SUPPRESSION COMPTE ===== */
+  .delete-account {
+    margin-top: 20px;
+  
+    button {
+      width: 100%;
+      padding: 8px;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  
+    .bottom-left-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #0d6efd;
+      text-decoration: underline;
+    }
+  }
+  
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .account {
+    flex-direction: column;
+  }
+
+  .user-info,
+  .add-task,
+  .delete-account {
+    width: 100%;
+  }
+}

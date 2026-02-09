@@ -1,0 +1,80 @@
+<main class="account">
+    <!-- Infos utilisateur -->
+    <section class="user-info">
+        <h1>Bonjour, <?= htmlspecialchars($_SESSION['user']['username'] ?? '') ?> !</h1>
+        <p>Email : <?= htmlspecialchars($_SESSION['user']['email'] ?? '') ?></p>
+        <p>Membre depuis : <?= htmlspecialchars($_SESSION['user']['created_at'] ?? '') ?></p>
+
+        <p>Badge : 
+            <?php
+            $completed = $completedCount ?? 0;
+            if ($completed >= 20) {
+                echo "Expert";
+            } elseif ($completed >= 10) {
+                echo "Intermédiaire";
+            } else {
+                echo "Débutant";
+            }
+            ?>
+        </p>
+    </section>
+
+    <!-- Formulaire ajout tâche -->
+    <section class="add-task">
+        <h2>Ajouter une tâche</h2>
+        <form method="POST">
+            <div class="form-row">
+                <label for="title">Titre :</label>
+                <input type="text" name="title" id="title" required>
+            </div>
+            <div class="form-row">
+                <label for="urgent">Urgent :</label>
+                <input type="checkbox" name="urgent" id="urgent">
+            </div>
+            <div class="form-row">
+                <label for="important">Important :</label>
+                <input type="checkbox" name="important" id="important">
+            </div>
+            <button type="submit" name="add_task">Ajouter</button>
+        </form>
+    </section>
+
+    <!-- Matrice des tâches -->
+    <section class="eisenhower">
+        <h2>Liste de tâches</h2>
+        <?php
+        $allTasks = [
+            'Urgent & Important' => $UI ?? [],
+            'Urgent & Pas Important' => $Ui ?? [],
+            'Pas Urgent & Important' => $uI ?? [],
+            'Ni Urgent Ni Important' => $ui ?? []
+        ];
+        ?>
+        <?php foreach ($allTasks as $matrixTitle => $tasksArray): ?>
+            <div class="matrix-cell">
+                <h3><?= $matrixTitle ?></h3>
+                <?php if (!empty($tasksArray)): ?>
+                    <?php foreach ($tasksArray as $task): ?>
+                        <div class="task">
+                            <span><?= htmlspecialchars($task['title']) ?></span>
+                            <a href="account.php?complete=<?= $task['id'] ?>">Accomplie</a>
+                            <a href="editTask.php?id=<?= $task['id'] ?>">Modifier</a>
+                            <a href="account.php?delete=<?= $task['id'] ?>">Supprimer</a>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>Aucune tâche ici</p>
+                <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
+    </section>
+
+    <!-- Supprimer le compte et bouton connexion -->
+    <section class="delete-account">
+        <form method="POST">
+            <button type="submit" name="delete_account">Supprimer mon compte</button>
+        </form>
+        <a href="login.php" class="bottom-left-link">Se connecter</a>
+    </section>
+
+</main>
